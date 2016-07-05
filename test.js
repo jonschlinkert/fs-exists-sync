@@ -1,6 +1,7 @@
 'use strict';
 
 require('mocha');
+var path = require('path');
 var assert = require('assert');
 var exists = require('./');
 var isLinux = process.platform === 'linux';
@@ -26,8 +27,8 @@ describe('fs-exists-sync', function() {
   });
 
   it('should handle case sensitive names on linux', function() {
-    assert.equal(exists('readme.md'), (isLinux ? 'README.md' : 'readme.md'));
-    assert.equal(exists('license'), (isLinux ? 'LICENSE' : 'license'));
+    assert.equal(exists('readme.md'), (isLinux ? path.resolve('README.md') : 'readme.md'));
+    assert.equal(exists('license'), (isLinux ? path.resolve('LICENSE') : 'license'));
   });
 
   it('should return true when a file exists', function() {
