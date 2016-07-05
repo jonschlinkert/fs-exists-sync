@@ -30,6 +30,10 @@ var path = require('path');
  */
 
 module.exports = function(filepath) {
+  if (!filepath || (typeof filepath !== 'string')) {
+    return false;
+  }
+
   try {
     (fs.accessSync || fs.statSync)(filepath);
     return filepath;
