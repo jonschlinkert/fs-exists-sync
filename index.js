@@ -89,7 +89,7 @@ function exists(filepath) {
  * Try to read the filepath as a directory first, then fallback to the filepath's dirname.
  *
  * @param  {String} `filepath` path of the directory to read.
- * @return {Object} Object containing `path` and `files` if succesful. Otherwise, null.
+ * @return {Object} Object containing `path` and `files` if successful. Otherwise, null.
  */
 
 function tryReaddir(filepath) {
